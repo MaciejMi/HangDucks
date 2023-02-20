@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 15 Lut 2023, 16:54
--- Wersja serwera: 10.4.22-MariaDB
--- Wersja PHP: 8.0.13
+-- Czas generowania: 20 Lut 2023, 18:08
+-- Wersja serwera: 10.4.27-MariaDB
+-- Wersja PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,30 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `hangman_db`
+-- Baza danych: `hangducks_db`
 --
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `categories`
---
-
-CREATE TABLE `categories` (
-  `category` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `users`
---
-
-CREATE TABLE `users` (
-  `hash` varchar(4) NOT NULL,
-  `user` varchar(50) NOT NULL,
-  `score` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -53,23 +31,27 @@ CREATE TABLE `words` (
   `word` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci NOT NULL,
   `category_fk` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci NOT NULL,
   `level` enum('easy','normal','hard','') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `words`
+--
+
+INSERT INTO `words` (`word`, `category_fk`, `level`) VALUES
+('Birma', 'geografia', 'normal'),
+('dzik', 'zwierzęta\r\n', 'easy'),
+('Honduras', 'geografia', 'hard'),
+('kaczka', 'zwierzęta\r\n', 'easy'),
+('komputer', 'inne\r\n', 'normal'),
+('kura', 'zwierzęta\r\n', 'easy'),
+('lis\r\n', 'zwierzęta\r\n', 'easy'),
+('Mjanma', 'geografia', 'normal'),
+('Nigeria', 'geografia', 'normal'),
+('Tajlandia', 'geografia', 'hard');
 
 --
 -- Indeksy dla zrzutów tabel
 --
-
---
--- Indeksy dla tabeli `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`category`);
-
---
--- Indeksy dla tabeli `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`hash`,`user`);
 
 --
 -- Indeksy dla tabeli `words`
