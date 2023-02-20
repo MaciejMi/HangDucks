@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  position: relative;
   font-size: 1.6rem;
   font-family: sans-serif;
   background-color: #21272b;
@@ -26,10 +27,16 @@ body {
 }
 
 h1 {
+  text-align: center;
   font-size: 4rem;
 }
-h1 span {
+
+span {
   color: #b10101;
+}
+
+.label {
+  font-size: 2rem;
 }
 
 .field {
@@ -37,6 +44,32 @@ h1 span {
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+form input,
+form select {
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: 1px solid #b10101;
+  color: #ffffff;
+  text-align: center;
+}
+form select {
+  background-color: #b10101;
+}
+form .btn {
+  background: none;
+  border: 1px solid transparent;
+  background-color: #b10101;
+  border-radius: 8px;
 }
 
 .container {
@@ -61,16 +94,27 @@ h1 span {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
+  min-height: 100vh;
 }
 .game .window {
-  max-width: 768px;
+  max-width: 700px;
 }
 .game .window img {
   border: 4px dotted #b10101;
   width: 100%;
 }
+.game .lifes {
+  color: #b10101;
+}
 .game .fields {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+}
+.game .fields .box {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
@@ -81,26 +125,6 @@ h1 span {
   height: 50px;
   background-color: #5a5a5a;
 }
-.game form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  font-size: 2rem;
-}
-.game form input {
-  padding: 1rem;
-  font-size: 2rem;
-  background: none;
-  border: 1px solid #b10101;
-  color: #ffffff;
-  text-align: center;
-}
-.game form .btn {
-  background: none;
-  border: 1px solid transparent;
-  background-color: #b10101;
-  border-radius: 8px;
-}
 .game .used-letters {
   display: flex;
   flex-direction: column;
@@ -108,7 +132,6 @@ h1 span {
 }
 .game .used-letters p {
   text-align: center;
-  font-size: 2rem;
 }
 .game .used-letters .box {
   display: flex;
@@ -126,6 +149,48 @@ h1 span {
   width: 40px;
   height: 40px;
   background-color: #414141;
+}
+
+.ranking {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  min-height: 100vh;
+}
+.ranking .place {
+  background-color: #5a5a5a;
+  width: 400px;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 9px;
+}
+.ranking .place:first-of-type {
+  background-color: goldenrod;
+}
+.ranking .place:nth-of-type(2) {
+  background-color: silver;
+}
+.ranking .place:nth-of-type(3) {
+  background-color: brown;
+}
+
+.back,
+.reset {
+  position: absolute;
+  top: 50px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.back {
+  left: 50px;
+}
+
+.reset {
+  right: 50px;
 }
 
 @media (min-width: 576px) {
