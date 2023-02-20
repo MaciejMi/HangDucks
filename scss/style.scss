@@ -1,0 +1,50 @@
+@use './_colors' as c;
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: sans-serif;
+	background-color: c.$bg-color;
+	color: c.$text-color;
+}
+
+.btn {
+	text-decoration: none;
+	color: c.$text-color;
+	text-transform: uppercase;
+	padding: 2rem 3rem;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+	gap: 2rem;
+	h1 {
+		font-size: 4rem;
+		span {
+			color: c.$main-color;
+		}
+	}
+	img {
+		width: 100px;
+	}
+	.btn {
+		border-radius: 5px;
+		background-color: c.$main-color;
+	}
+}

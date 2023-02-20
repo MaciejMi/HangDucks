@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  background-color: #21272b;
+  color: #ffffff;
+}
+
+.btn {
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 2rem 3rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  gap: 2rem;
+}
+.container h1 {
+  font-size: 4rem;
+}
+.container h1 span {
+  color: #b10101;
+}
+.container img {
+  width: 100px;
+}
+.container .btn {
+  border-radius: 5px;
+  background-color: #b10101;
+}/*# sourceMappingURL=style.css.map */
