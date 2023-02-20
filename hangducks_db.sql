@@ -44,7 +44,7 @@ INSERT INTO `words` (`word`, `category_fk`, `level`) VALUES
 ('kaczka', 'zwierzęta\r\n', 'easy'),
 ('komputer', 'inne\r\n', 'normal'),
 ('kura', 'zwierzęta\r\n', 'easy'),
-('lis\r\n', 'zwierzęta\r\n', 'easy'),
+('lis', 'zwierzęta\r\n', 'easy'),
 ('Mjanma', 'geografia', 'normal'),
 ('Nigeria', 'geografia', 'normal'),
 ('Tajlandia', 'geografia', 'hard');
