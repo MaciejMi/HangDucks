@@ -14,10 +14,6 @@ if (isset($_SESSION['status']) && $_SESSION['status'] == 2) {
     $_SESSION['finishTime'] = 0;
 }
 
-if (!isset($fullName)){
-    $fullName = '';
-}
-
 $name = $_POST['name'] ?? NULL;
 if ($name){
     $_SESSION['name'] = $name;
@@ -30,20 +26,21 @@ if ($level) {
 
 if (isset($_SESSION['status'])){
     if ($_SESSION['status'] == 2){
-        $hash = '';
-        for ($i = 0; $i < 4; $i++){
-            $hash .= rand(0, 4);
-        }
-        $fullName = $_SESSION['name'] . '#' . $hash;
-        require './components/connection.php';
-        try{
-            $query_str = "INSERT INTO `users` (`hash`, `user`, `score`) VALUES ('{$hash}', '{$_SESSION['name']}', '{$time}')
-            "        ;
-                    $query = $conn -> query($query_str);
-        }
-        catch (PDOException $e){
-            header("Location: ../index.php");
-        }
+            $hash = '';
+            for ($i = 0; $i < 4; $i++){
+                $hash .= rand(0, 4);
+            }
+            $fullName = $_SESSION['name'] . '#' . $hash;
+        
+            require './components/connection.php';
+            try{
+                $query_str = "INSERT INTO `users` (`hash`, `user`, `score`) VALUES ('{$hash}', '{$_SESSION['name']}', '{$time}')
+                "        ;
+                        $query = $conn -> query($query_str);
+            }
+            catch (PDOException $e){
+                header("Location: ../index.php");
+            }
     }
 }
 
@@ -138,8 +135,9 @@ if (!isset($_SESSION['name']) && !isset($_SESSION['level'])){
             <?php endif; ?>
             
         </div>
-                <?php if ($fullName): ?>
-                <p class = "label" >Twój nick <?= $fullName ?></p>
+                <?php if ($_SESSION['status'] == 2): ?>
+                <p class = "label" >Twój nick w rankingu: <?= $fullName ?></p>
+                <p class = "label" >Twój czas: <?= $time ?></p>
                 <?php endif; ?>
                 <p class="status label">
                     <?php if ($_SESSION['status'] == 1): ?>
@@ -159,10 +157,14 @@ if (!isset($_SESSION['name']) && !isset($_SESSION['level'])){
         <div class="fields">
             <p class="label">Słowo: </p>
             <div class="box">
+            <?php if (!$_SESSION['status'] == 1):?>
                <?php for ($i = 0; $i < mb_strlen($_SESSION['enteredWord']); $i++): ?>
                 <div class="field"><?= $_SESSION['enteredWord'][$i] ?></div>
                 <?php endfor; ?>
-            </div>
+             <?php else: ?>
+                <p class = "label"><?= $_SESSION['word'][0] ?></p>
+            <?php endif;?>
+        </div>
         </div>
         <?php if ($_SESSION['status'] == 0): ?>
         <form method="POST" action = "./components/check_letter.php">
