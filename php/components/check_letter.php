@@ -4,12 +4,12 @@ $letter = $_POST['letter'] ?? NULL;
 if (!$letter){
     header("Location: ../../index.php");
 }
+$_SESSION['dead'] = false;
 if (str_contains($_SESSION['wellUsedLetters'], $letter) || str_contains($_SESSION['wrongUsedLetters'], $letter)){
     header("Location: ../game.php");
     exit();
 }
 
-$_SESSION['dead'] = false;
 
 $str = mb_strtoupper($_SESSION['word'][0], 'UTF-8');
 
