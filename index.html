@@ -7,13 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer></script>
 </head>
 
 <body>
-    <div class="container">
+    <!-- <div class="container">
         <h1>Hang<span>Ducks</span></h1>
         <img src="./img/ducks/hangDuckLogo.png" alt="">
         <a href="" class="btn">start game</a>
+        <a href="" class="btn">ranking</a>
+    </div> -->
+    <div class="game">
+        <h1>Hang<span>Ducks</span></h1>
+        <div class="window">
+            <img src="./img/ducks/0from3dance.gif" alt="">
+        </div>
+        <div class="fields">
+            <div class="field">K</div>
+            <div class="field"></div>
+            <div class="field">C</div>
+            <div class="field">Z</div>
+            <div class="field">K</div>
+            <div class="field"></div>
+        </div>
+        <form method="POST">
+            <input type="text" name="letter" maxlength="1" placeholder="Wprowadź litere.." required>
+            <button type="submit" class="btn">Zgadnij</button>
+        </form>
+
+        <div class="used-letters">
+            <p>Historia wprowadzonych liter: </p>
+            <div class="box">
+                <p class="field well">C</p>
+                <p class="field wrong">E</p>
+                <p class="field well">Z</p>
+                <p class="field well">K</p>
+                <p class="field well">K</p>
+                <p class="field wrong">F</p>
+            </div>
+        </div>
     </div>
 </body>
 

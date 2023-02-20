@@ -18,10 +18,25 @@ body {
 }
 
 .btn {
+  padding: 2rem 3rem;
   text-decoration: none;
   color: #ffffff;
   text-transform: uppercase;
-  padding: 2rem 3rem;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 4rem;
+}
+h1 span {
+  color: #b10101;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 }
 
 .container {
@@ -33,16 +48,104 @@ body {
   width: 100%;
   gap: 2rem;
 }
-.container h1 {
-  font-size: 4rem;
-}
-.container h1 span {
-  color: #b10101;
-}
-.container img {
-  width: 100px;
-}
 .container .btn {
   border-radius: 5px;
   background-color: #b10101;
+}
+.container .btn:last-of-type {
+  padding: 1.5rem 2rem;
+}
+
+.game {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.game .window {
+  max-width: 768px;
+}
+.game .window img {
+  border: 4px dotted #b10101;
+  width: 100%;
+}
+.game .fields {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.game .fields .field {
+  width: 50px;
+  height: 50px;
+  background-color: #5a5a5a;
+}
+.game form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 2rem;
+}
+.game form input {
+  padding: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: 1px solid #b10101;
+  color: #ffffff;
+  text-align: center;
+}
+.game form .btn {
+  background: none;
+  border: 1px solid transparent;
+  background-color: #b10101;
+  border-radius: 8px;
+}
+.game .used-letters {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.game .used-letters p {
+  text-align: center;
+  font-size: 2rem;
+}
+.game .used-letters .box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.game .used-letters .box .well {
+  background-color: #4eac18;
+}
+.game .used-letters .box .wrong {
+  background-color: #ac1d18;
+}
+.game .used-letters .field {
+  width: 40px;
+  height: 40px;
+  background-color: #414141;
+}
+
+@media (min-width: 576px) {
+  .container h1 {
+    font-size: 7rem;
+  }
+  .container .btn {
+    padding: 3rem 5rem;
+    font-size: 2rem;
+  }
+  .container .btn:last-of-type {
+    padding: 2rem 5rem;
+  }
+  .game {
+    padding: 3rem;
+  }
+  .game form input {
+    padding: 1rem 2rem;
+  }
+  .game form .btn {
+    font-size: 2rem;
+  }
 }/*# sourceMappingURL=style.css.map */
