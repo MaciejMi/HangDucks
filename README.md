@@ -26,4 +26,3 @@ git clone https://github.com/MaciejMi/HangDucks.git
 
 Then install xampp, start apache and mysql. After that go to localhost/phpmyadmin create open named hangducks_db and import into this file hangducks_db.sql.
 
-Idea from: https://www.behance.net/gallery/137245053/Tatlong-Bibe-Rescue/modules/776152381
