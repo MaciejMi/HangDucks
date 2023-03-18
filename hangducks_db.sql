@@ -21,7 +21,39 @@ SET time_zone = "+00:00";
 -- Baza danych: `hangducks_db`
 --
 
+--
+-- Struktura tabeli dla tabeli `categories`
+--
+
+CREATE TABLE `categories` (
+  `category` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- --------------------------------------------------------
+
+
+--
+-- Struktura tabeli dla tabeli `users`
+--
+
+CREATE TABLE `users` (
+  `hash` varchar(4) NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `score` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+-- --------------------------------------------------------
+
+--
+-- Indeksy dla tabeli `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`category`);
+
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`hash`,`user`);
 
 --
 -- Struktura tabeli dla tabeli `words`
